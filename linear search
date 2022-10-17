@@ -1,0 +1,36 @@
+linear search with random number input and find the random number
+
+#include <stdio.h>
+ 
+int search(int arr[], int N, int x)
+{
+    int i;
+    for (i = 0; i < N; i++)
+        if (arr[i] == x)
+            return i;
+    return -1;
+}
+int main(void)
+{
+    int arr[100];
+    printf("the cntents of the array are");
+    for(int i=0;i<100;i++){
+        arr[i]=rand()%10;
+        printf("%d ",arr[i]);
+    }
+   int x ;
+   printf("enter the search element");
+   scanf("%d\t",&x);
+    int N = sizeof(arr) / sizeof(arr[0]);
+ 
+    // Function call
+    int result = search(arr, N, x);
+    if(result!=-1){
+      printf("The element is present at position %d",result+1);
+    }else{
+      printf("The element is not present in the array");
+    }
+    return 0;
+
+     
+}
